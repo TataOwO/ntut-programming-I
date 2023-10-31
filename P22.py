@@ -82,9 +82,10 @@ def main():
     scoreArray = []
     foundCards = []
     for c in range(int(input())):
-        inp = input().split(" ")
-        scoreArray.append([inp[0], processCardInput(inp[1:])])
-        foundCards.extend(inp[1:])
+        cards = input().split(" ")
+        playerName = cards.pop(0)
+        scoreArray.append([playerName, processCardInput(cards)])
+        foundCards.extend(cards)
     scoreArray.sort(key=lambda x: x[1], reverse=True)
     
     # print(scoreArray)
